@@ -1,0 +1,28 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<style>
+    td:nth-child(2) { /* Вибираємо другу колонку */
+    white-space: nowrap;
+}
+</style>
+<table class="table table-bordered table-hover table-sm table-striped table-dark">
+    <thead>
+        <tr class="table-primary">
+            <th scope="col">Номер уроку</th>
+            <th scope="col">Дата</th>
+            <th scope="col">Назва уроку</th>
+            <th scope="col">Примітки</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for lesson in lessons %}
+        <tr>
+            <td>{{ lesson.lesson_number }}</td>
+            <td>{{ lesson.date }}</td>
+            <td>{{ lesson.title }}</td>
+            <td>{{ lesson.notes }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

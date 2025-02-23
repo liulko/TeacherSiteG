@@ -1,0 +1,21 @@
+{% load static %}
+
+<h1>Календарний план</h1>
+
+<div class="subjects">
+    <h2>Предмети та класи</h2>
+    <div class="subject-grid">
+        {% for item in subjects_with_grades %}
+        <div class="subject-card">
+            <h3>{{ item.subject.name }}</h3>
+            <div class="grade-list">
+                {% for grade in item.grades %}
+                <a href="{% url 'lesson_list' subject_id=item.subject.id grade_id=grade.id %}" class="grade-item">{{ grade.number }}</a>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<link rel="stylesheet" href="{% static 'planner/css/style.css' %}">
