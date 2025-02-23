@@ -41,5 +41,5 @@ def import_lessons_from_csv(file_path):
 
 # Запуск імпорту (приклад)
 if __name__ == '__main__':
-    file_path = '5m.csv'  # Замініть на шлях до вашого файлу
+    file_path = 'plans_as_csv/5m.csv'  # Замініть на шлях до вашого файлу
     import_lessons_from_csv(file_path)
